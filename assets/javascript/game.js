@@ -8,26 +8,26 @@ var losses=0;
 var userTotal=0;
 
 // total (random number generation for the game)
-var total= Math.floor((Math.random()*100) +19);
+var total= Math.floor((Math.random()*120) +1);
 
 // crystal values (random numbers for each click of the crystal)
-var cross= Math.floor((Math.random()*10) +1);
-var crystalSkull= Math.floor((Math.random()*10) +1);
-var diamond= Math.floor((Math.random()*10) +1);
-var blue= Math.floor((Math.random()*10) +1);
+var cross= Math.floor((Math.random()*12) +1);
+var crystalSkull= Math.floor((Math.random()*12) +1);
+var diamond= Math.floor((Math.random()*12) +1);
+var blue= Math.floor((Math.random()*12) +1);
 
 
 
 // restart and reset the game
 function reset (){
-	total= Math.floor((Math.random()*100) +19);
+	total= Math.floor((Math.random()*120) +1);
 	console.log(total);
 
 	$("randomNumber").append(total);
-	cross= Math.floor((Math.random()*10) +1);
-	crystalSkull= Math.floor((Math.random()*10) +1);
-	diamond= Math.floor((Math.random()*10) +1);
-	blue= Math.floor((Math.random()*10) +1);
+	cross= Math.floor((Math.random()*12) +1);
+	crystalSkull= Math.floor((Math.random()*12) +1);
+	diamond= Math.floor((Math.random()*12) +1);
+	blue= Math.floor((Math.random()*12) +1);
 	userTotal=0;
 
 	$("#finalTotal").text(userTotal);
@@ -68,6 +68,7 @@ $("#cross").on ("click", function() {
 
 })
 
+// on click events for the gems
 $("#cross").on ("click", function() {
 	userTotal= userTotal + cross;
 	console.log("New Total= " + userTotal);
