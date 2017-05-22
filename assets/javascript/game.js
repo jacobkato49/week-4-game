@@ -1,6 +1,8 @@
 // creating the count
-$("#yourWins").text(wins);
-$("#yourLosses").text(losses);
+$("#yourWins").html(wins);
+$("#yourLosses").html(losses);
+
+
 
 // create global variables for the game
 var wins=0;
@@ -9,6 +11,7 @@ var userTotal=0;
 
 // total (random number generation for the game)
 var total= Math.floor((Math.random()*120) +1);
+$("#randomNumber").text(total);
 
 // crystal values (random numbers for each click of the crystal)
 var cross= Math.floor((Math.random()*12) +1);
@@ -23,14 +26,15 @@ function reset (){
 	total= Math.floor((Math.random()*120) +1);
 	console.log(total);
 
-	$("randomNumber").append(total);
+	
 	cross= Math.floor((Math.random()*12) +1);
 	crystalSkull= Math.floor((Math.random()*12) +1);
 	diamond= Math.floor((Math.random()*12) +1);
 	blue= Math.floor((Math.random()*12) +1);
 	userTotal=0;
 
-	$("#finalTotal").text(userTotal);
+	$(".finalTotal").html(userTotal);
+	$("randomNumber").html(total);
 }
 
 
@@ -38,7 +42,7 @@ function reset (){
 function winningTime(){
 	alert("You Win!");
 	wins++;
-	$("#yourWins").text(wins);
+	$("#yourWins").html(wins);
 	reset();
 }
 
@@ -47,7 +51,7 @@ function winningTime(){
 function losingTime(){
 	alert("You lose. Would you like to try again?")
 	losses++;
-	$("#yourLosses").text(losses);
+	$("#yourLosses").html(losses);
 	reset();
 }
 
@@ -56,7 +60,7 @@ function losingTime(){
 $("#cross").on ("click", function() {
 	userTotal= userTotal + cross;
 	console.log("New Total= " + userTotal);
-	$("#finalTotal").text(userTotal);
+	$(".finalTotal").html(userTotal);
 
 	if (userTotal == total) {
 		winningTime();
@@ -68,16 +72,21 @@ $("#cross").on ("click", function() {
 
 })
 
+
 // on click events for the gems
+
+// on click
 $("#cross").on ("click", function() {
 	userTotal= userTotal + cross;
 	console.log("New Total= " + userTotal);
-	$("#finalTotal").text(userTotal);
+	$(".finalTotal").html(userTotal);
 
+	// win
 	if (userTotal == total) {
 		winningTime();
 	}
 
+	// loss
 	else if (userTotal > total) {
 		losingTime();
 	}
@@ -87,7 +96,7 @@ $("#cross").on ("click", function() {
 $("#crystalSkull").on ("click", function() {
 	userTotal= userTotal + crystalSkull;
 	console.log("New Total= " + userTotal);
-	$("#finalTotal").text(userTotal);
+	$(".finalTotal").html(userTotal);
 
 	if (userTotal == total) {
 		winningTime();
@@ -102,7 +111,7 @@ $("#crystalSkull").on ("click", function() {
 $("#diamond").on ("click", function() {
 	userTotal= userTotal + diamond;
 	console.log("New Total= " + userTotal);
-	$("#finalTotal").text(userTotal);
+	$(".finalTotal").html(userTotal);
 
 	if (userTotal == total) {
 		winningTime();
@@ -117,7 +126,7 @@ $("#diamond").on ("click", function() {
 $("#blue").on ("click", function() {
 	userTotal= userTotal + blue;
 	console.log("New Total= " + userTotal);
-	$("#finalTotal").text(userTotal);
+	$(".finalTotal").html(userTotal);
 
 	if (userTotal == total) {
 		winningTime();
