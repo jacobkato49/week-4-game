@@ -11,7 +11,7 @@ var userTotal=0;
 
 // total (random number generation for the game)
 var total= Math.floor((Math.random()*120) +1);
-$("#randomNumber").text(total);
+$("#randomNumber").html(total);
 
 // crystal values (random numbers for each click of the crystal)
 var cross= Math.floor((Math.random()*12) +1);
@@ -34,7 +34,7 @@ function reset (){
 	userTotal=0;
 
 	$(".finalTotal").html(userTotal);
-	$("randomNumber").html(total);
+	$("#randomNumber").html(total);  // not resetting correctly (debug)
 }
 
 
@@ -67,7 +67,7 @@ $("#cross").on ("click", function() {
 	}
 
 	else if (userTotal > total) {
-		losingTime();
+		losingTime(); 					// might have to put the reset in for the count with the else if 
 	}
 
 })
