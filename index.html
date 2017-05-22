@@ -44,40 +44,57 @@
 			
 			<!--Crystal Images-->
 			<img src="assets/images/cross_crystal.jpg" class="gemImage" id="cross">
-			<img src="assets/images/crystal skull.jpg" class="gemImage" id="crystal skull">
+			<img src="assets/images/crystal skull.jpg" class="gemImage" id="crystalSkull">
 			<img src="assets/images/Diamond.png" class="gemImage" id="diamond">
 			<img src="assets/images/Kinetic_Crystal.jpg" class="gemImage" id="blue">
 		</div>
 	</div>
 
 	<!--Stat areas for wins/losses/etc-->
+
+	<!--Numbers aren't showing up have to fix-->
 	<div class= "row">
-		<div class= "col-md-6 well">
+		<div class= "col-md-4 well">
+
+			<div class="numberMatch">
+				<h3>Number to obtain:
+					<span id="randomNumber"></span>
+
+				</h3>
+			</div>
+		</div>
+
+		<div class= "col-md-4 well">
 
 			<div class="result">
-				<h3> Wins:<div id="yourWins"></div>
-					Losses:<div id="yourLosses"></div>
+				<h3> Wins:
+					<div id="yourWins"></div> <!-- might also make this a span-->
+
+					</br>
+
+					Losses:
+					<div id="yourLosses"></div>
+
 				</h3>
 
 			</div>
 		</div>
 
-		<div class= "col-md-6 well">
+		<div class= "col-md-4 well">
 
-			<div class="score">
-				<h3>Your total score: </h3>
+			<div class="userTotal">
+				<h3>Total score: </h3>
+					<span class="finalTotal"></span>
+
 			</div>
 
-			<div class="addition"></div>
 		</div>
 	</div>
 
 
 </div>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<script type=“text/javascript” src=“https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js“></script>
 <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
